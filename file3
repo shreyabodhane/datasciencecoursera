@@ -1,1 +1,135 @@
 
+arcanin3@arcanin3-Inspiron-5558:~$ git config --global --unset user.name 
+arcanin3@arcanin3-Inspiron-5558:~$ git config --global --unset user.email 
+arcanin3@arcanin3-Inspiron-5558:~$ git config --global --unset credential.helperarcanin3@arcanin3-Inspiron-5558:~$ ls
+ 01.pdf                Documents           PycharmProjects
+ 30_Final_STQA.pdf     Downloads           R
+ add19                 eclipse             register.php
+ algorithm             eclipse-workspace  'RRR DM'
+ ApacheS               final              'RRR DM.zip'
+ AssignmentPRN66       FOSS                rstudio-1.2.5001-amd64.deb
+ AssignmentPRN66.zip   FTPcreatedDir       rushi
+ atlassian             GitDem              snap
+ attachments           ISE                 tdweight.r
+ attachments.zip       ISE.zip             Templates
+ Btech                 login               testlink-1.9.19-8
+ bugzilla              login.php           udya
+ config.php            logout.php          Videos
+ Desktop               Music               welcome.php
+ DL                    myTrash             wordpress
+ dock-base             OSS                 WordPress
+ DockBase2             Pictures            workspace
+ docker-basic          ProjectBacks
+ docker-compose.yml    Public
+arcanin3@arcanin3-Inspiron-5558:~$ cd GitDem/
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git init
+Initialized empty Git repository in /home/arcanin3/GitDem/.git/
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ touch myFile.txt
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ ls
+myFile.txt
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git add myFile.txt 
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   myFile.txt
+
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git commit -m "My First commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'arcanin3@arcanin3-Inspiron-5558.(none)')
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$  git config --global user.email "shreyaabodhane011@gmail.com"
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ ^C
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$  git config --global user.name "shreyabodhane"
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git commit -m "My First commit"
+[master (root-commit) 0e947f8] My First commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 myFile.txt
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git status
+On branch master
+nothing to commit, working tree clean
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git branch
+* master
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git checkout -b "branch2"
+Switched to a new branch 'branch2'
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git branch
+* branch2
+  master
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git checkout "master"
+Switched to branch 'master'
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git checkout -b "newBranch"
+Switched to a new branch 'newBranch'
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git branch
+  branch2
+  master
+* newBranch
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ ls
+myFile.txt
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ touch file2.txt
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ ls
+file2.txt  myFile.txt
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git checkout "master"
+Switched to branch 'master'
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ ls
+file2.txt  myFile.txt
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git remote add origin https://github.com/shreyabodhane/myRepo1.git
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git push -u origin 
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git push -u origin master 
+Username for 'https://github.com': shreyabodhane
+Password for 'https://shreyabodhane@github.com': 
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 219 bytes | 219.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/shreyabodhane/myRepo1.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git push -u origin 
+branch2         HEAD            master          newBranch       origin/master   
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git push -u origin newBranch 
+Username for 'https://github.com': shreyabodhane
+Password for 'https://shreyabodhane@github.com': 
+Total 0 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'newBranch' on GitHub by visiting:
+remote:      https://github.com/shreyabodhane/myRepo1/pull/new/newBranch
+remote: 
+To https://github.com/shreyabodhane/myRepo1.git
+ * [new branch]      newBranch -> newBranch
+Branch 'newBranch' set up to track remote branch 'newBranch' from 'origin'.
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git push -u origin 
+branch2            HEAD               master             newBranch          origin/master      origin/newBranch 
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git push -u origin branch2 
+Username for 'https://github.com': shreyabodhane
+Password for 'https://shreyabodhane@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/shreyabodhane/myRepo1.git/'
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ git push -u origin branch2 
+Username for 'https://github.com': shreyabodhane
+Password for 'https://shreyabodhane@github.com': 
+Total 0 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'branch2' on GitHub by visiting:
+remote:      https://github.com/shreyabodhane/myRepo1/pull/new/branch2
+remote: 
+To https://github.com/shreyabodhane/myRepo1.git
+ * [new branch]      branch2 -> branch2
+Branch 'branch2' set up to track remote branch 'branch2' from 'origin'.
+arcanin3@arcanin3-Inspiron-5558:~/GitDem$ 
